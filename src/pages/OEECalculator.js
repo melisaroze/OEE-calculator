@@ -37,6 +37,16 @@ export default function OEECalculator() {
     setOee((av * pf * ql) / 10000);
   };
 
+  const handleClear = () => {
+    setAvailabilityData(null);
+    setPerformanceData(null);
+    setQualityData(null);
+    setAvailability(0);
+    setPerformance(0);
+    setQuality(0);
+    setOee(0);
+  };
+
   return (
     <Container>
     <Row>
@@ -51,16 +61,22 @@ export default function OEECalculator() {
 
       <div className="gap-2">
         <AvailabilityForm 
-            onChange={handleFormChange} />
+            onChange={handleFormChange}
+            value={availabilityData} />
 
         <PerformanceForm 
-            onChange={handleFormChange} />
+            onChange={handleFormChange}
+            value={performanceData} />
 
         <QualityForm 
-            onChange={handleFormChange} />
+            onChange={handleFormChange}
+            value={qualityData} />
       </div>
 
-      <CalculateButton onCalculate={calculateOEE} />
+      <CalculateButton 
+        onCalculate={calculateOEE}
+        onClear={handleClear}
+        disabled={!availabilityData || !performanceData || !qualityData} />
     </Col>
 
     <Col className="lg-6">

@@ -1,7 +1,7 @@
 export default function ResultsCard({ availability, performance, quality, oee }) {
   return (
     <div className="bg-white p-6 rounded shadow mx-auto text-center">
-      <h3 className="fw-bold mb-4 p-2">Results</h3>
+      <h3 className="fw-bold mb-4 p-2 text-primary">Results</h3>
 
       <p>Availability: <strong>{availability.toFixed(2)}%</strong></p>
       <p>Performance: <strong>{performance.toFixed(2)}%</strong></p>
