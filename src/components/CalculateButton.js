@@ -1,7 +1,7 @@
 export default function CalculateButton({ onCalculate, disabled, onClear }) {
 
   return (
-    <div className="text-center my-3 d-flex justify-content-center gap-3">
+    <div className="text-center my-2 d-flex justify-content-center gap-3">
       <button
         onClick={onCalculate}
         disabled={disabled}

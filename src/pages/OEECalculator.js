@@ -47,6 +47,44 @@ export default function OEECalculator() {
     setOee(0);
   };
 
+    const exportToCSV = () => {
+    if (!availabilityData && !performanceData && !qualityData) return;
+
+    const header = ["Type", "Field", "Value"];
+    const rows = [];
+
+    if (availabilityData) {
+      rows.push(["Availability", "Planned", availabilityData.planned]);
+      rows.push(["Availability", "Downtime", availabilityData.downtime]);
+    }
+    if (performanceData) {
+      rows.push(["Performance", "Ideal", performanceData.ideal]);
+      rows.push(["Performance", "Units", performanceData.units]);
+      rows.push(["Performance", "Run Time", performanceData.runTime]);
+    }
+    if (qualityData) {
+      rows.push(["Quality", "Good Units", qualityData.good]);
+      rows.push(["Quality", "Rejected Units", qualityData.rejects]);
+    }
+
+    // Add calculated results
+    rows.push(["Result", "Availability", availability.toFixed(2)]);
+    rows.push(["Result", "Performance", performance.toFixed(2)]);
+    rows.push(["Result", "Quality", quality.toFixed(2)]);
+    rows.push(["Result", "OEE", oee.toFixed(2)]);
+
+    const csvContent = [header, ...rows].map(e => e.join(",")).join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "oee_data.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <Container>
     <Row>
@@ -77,6 +115,13 @@ export default function OEECalculator() {
         onCalculate={calculateOEE}
         onClear={handleClear}
         disabled={!availabilityData || !performanceData || !qualityData} />
+      <button 
+        className="btn btn-success mb-3 w-100 px-8 py-2" 
+        onClick={exportToCSV}
+        disabled={!availabilityData && !performanceData && !qualityData}
+        >
+        Export CSV
+      </button>
     </Col>
 
     <Col className="lg-6">
