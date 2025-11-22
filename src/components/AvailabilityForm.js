@@ -31,6 +31,7 @@ export default function AvailabilityForm({ onChange, value }) {
         type="number"
         className="w-full p-2 border rounded mb-2"
         value={planned}
+        placeholder="-"
         onChange={(e) => setPlanned(e.target.value)}
         onBlur={update}
       />
@@ -42,6 +43,7 @@ export default function AvailabilityForm({ onChange, value }) {
         type="number"
         className="w-full p-2 border rounded"
         value={downtime}
+        placeholder="-"
         onChange={(e) => setDowntime(e.target.value)}
         onBlur={update}
       />

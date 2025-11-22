@@ -31,6 +31,7 @@ export default function PerformanceForm({ onChange, value }) {
       <label>Ideal Cycle Time (mins/unit):</label>
       <input
         type="number"
+        placeholder="-"
         className="w-full p-2 border rounded mb-2"
         value={ideal}
         onChange={(e) => setIdeal(e.target.value)}
@@ -42,6 +43,7 @@ export default function PerformanceForm({ onChange, value }) {
       <label>Units Produced:</label>
       <input
         type="number"
+        placeholder="-"
         className="w-full p-2 border rounded mb-2"
         value={units}
         onChange={(e) => setUnits(e.target.value)}
@@ -53,6 +55,7 @@ export default function PerformanceForm({ onChange, value }) {
       <label>Run Time (mins):</label>
       <input
         type="number"
+        placeholder="-"
         className="w-full p-2 border rounded"
         value={runTime}
         onChange={(e) => setRunTime(e.target.value)}

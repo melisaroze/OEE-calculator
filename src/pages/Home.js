@@ -11,7 +11,7 @@ return (
         <section className="m-3 p-2">
                 <h1 className="p-2">Optimize Your Manufacturing Performance</h1>
                 <h5 className="p-2">“Calculate Availability, Performance, and Quality in real-time with our OEE Calculator”</h5>
-                <Link className="btn cta border border-dark p-2" to={"/oeecalculator"}>Start Calculating</Link>
+                <Link className="btn border border-dark p-3 m-3 cta" to={"/oeecalculator"}>Start Calculating</Link>
        </section>
 
     <FeatureSection />

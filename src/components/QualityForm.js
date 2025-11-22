@@ -28,6 +28,7 @@ export default function QualityForm({ onChange, value }) {
       <label>Good Units:</label>
       <input
         type="number"
+        placeholder="-"
         className="w-full p-2 border rounded mb-2"
         value={good}
         onChange={(e) => setGood(e.target.value)}
@@ -39,6 +40,7 @@ export default function QualityForm({ onChange, value }) {
       <label>Rejected Units:</label>
       <input
         type="number"
+        placeholder="-"
         className="w-full p-2 border rounded"
         value={rejects}
         onChange={(e) => setRejects(e.target.value)}

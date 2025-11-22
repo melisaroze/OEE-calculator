@@ -27,17 +27,31 @@ html, body, #root {
   padding: 0;
 }
 
-.cta,
-.calculate-btn {
+
+.navbar {
+  color: black; 
+  border-bottom: 2px solid;
+  height: 7vh;
+}
+
+.nav-link {
+  color: white !important;
+  transition: color 0.3s ease;       
+}
+
+.navbar .nav-link:hover {
+  color: gray !important;
+}
+
+.cta {
   background-color: #0A84FF !important;
   padding: 12px 28px;
-  font-size: 1.1rem; 
-  font-weight: 600;
+  font-size: 2 rem; 
+  font-weight: 800;
   color: white !important;
 }
 
-.cta:hover,
-.calculate-btn:hover {
+.cta:hover {
   background-color: white !important;
   color: black !important;
 }
@@ -71,7 +85,7 @@ html, body, #root {
 }
 
 .results {
-  font-size: 24px;
+  font-size: 36px;
   color: green;
   animation-name: fadeIn;
   animation-duration: 5s;

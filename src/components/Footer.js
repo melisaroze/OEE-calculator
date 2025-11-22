@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <p className="text-center text-white bg-dark p-2">
+    <h5 className="text-center text-white bg-dark p-4">
       OEE Calculator | Built by Meliza Rose Alvarez
-    </p>
+    </h5>
   );
 }
