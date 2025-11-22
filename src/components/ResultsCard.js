@@ -1,3 +1,5 @@
+import OEEChart from './OEEChart';
+
 export default function ResultsCard({ availability, performance, quality, oee }) {
   return (
     <div className="bg-white p-6 rounded shadow mx-auto text-center">
@@ -12,6 +14,14 @@ export default function ResultsCard({ availability, performance, quality, oee })
       <p className="results fw-bold">
         OEE Score: {oee.toFixed(2)}%
       </p>
+
+      <div className="d-flex justify-content-center w-100">
+      <OEEChart
+        availability={availability}
+        performance={performance}
+        quality={quality}
+        />
+      </div>
     </div>
   );
 }
